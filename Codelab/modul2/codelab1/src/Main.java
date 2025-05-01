@@ -12,5 +12,3 @@ public class Main {
         hewan2.tampilkanInfo();
     }
 }
-
-//Muhamad Robi Ardita_202410370110002_2B
