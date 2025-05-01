@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/codelab1/codelab1.iml" filepath="$PROJECT_DIR$/codelab1/codelab1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/codelab2/codelab2.iml" filepath="$PROJECT_DIR$/codelab2/codelab2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modul2.iml" filepath="$PROJECT_DIR$/.idea/modul2.iml" />
     </modules>
   </component>
