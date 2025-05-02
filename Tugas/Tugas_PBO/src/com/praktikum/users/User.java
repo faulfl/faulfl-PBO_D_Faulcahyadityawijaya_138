@@ -1,4 +1,6 @@
-public class User {
+package com.praktikum.users;
+
+public abstract class User {
     private String nama;
     private String nim;
 
@@ -31,4 +33,7 @@ public class User {
         System.out.println("Nama : " + nama);
         System.out.println("Nim  : " + nim);
     }
+
+    public abstract void dispLayAppMenu();
+
 }
