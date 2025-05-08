@@ -17,7 +17,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
 
     @Override
     public void displayInfo(){
-        System.out.println("Login berhasil! Selamat datang, " + getNama() + "(com.praktikum.users.Mahasiswa)");
+        System.out.println("Login berhasil! Selamat datang, " + getNama());
     }
 
 

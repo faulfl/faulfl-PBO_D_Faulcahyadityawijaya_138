@@ -11,13 +11,13 @@ public class LoginSystem {
         Scanner scan = new Scanner(System.in);
 
         User user1 = new Admin("Faul", "138", "admin138", "pw138");
-        User user2 = new Mahasiswa("faul", "202410370110138");
+        User user2 = new Mahasiswa("faul", "138");
 
         while (true) {
-            System.out.println("--------------------");
-            System.out.println("Pilih Jenis Login: ");
-            System.out.println("1. com.praktikum.users.Admin");
-            System.out.println("2. com.praktikum.users.Mahasiswa");
+            System.out.println("----------erere----------");
+            System.out.println("Pilih Role Anda: ");
+            System.out.println("1. Admin (OP)");
+            System.out.println("2. Mahasiswa (bot)");
             System.out.println("3. Keluar");
             System.out.print("Masukkan Pilihan Anda: ");
             int pilihan = scan.nextInt();
@@ -31,6 +31,7 @@ public class LoginSystem {
 
                 if (user1.login(username, password)) {
                     user1.displayInfo();
+                    user1.dispLayAppMenu();
                 } else {
                     System.out.println("Login com.praktikum.users.Admin Gagal Mas!! Kayaknya Username atau Password salah deh. ");
                 }
@@ -43,6 +44,7 @@ public class LoginSystem {
 
                 if (user2.login(nama, nim)) {
                     user2.displayInfo();
+                    user2.dispLayAppMenu();
                 } else {
                     System.out.println("Login com.praktikum.users.Mahasiswa Gagal!! Nama atau Nim salah. ");
                 }

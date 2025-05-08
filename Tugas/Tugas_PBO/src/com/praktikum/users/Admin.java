@@ -20,7 +20,7 @@ public class Admin extends User implements AdminActions {
 
     @Override
     public void displayInfo(){
-        System.out.println("Login berhasil! Selamat datang, " + getNama() + "(com.praktikum.users.Admin)");
+        System.out.println("Login berhasil! Selamat datang, " + getNama());
     }
 
     @Override
