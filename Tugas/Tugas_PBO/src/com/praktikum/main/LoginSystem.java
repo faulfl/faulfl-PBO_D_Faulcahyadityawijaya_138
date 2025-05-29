@@ -1,23 +1,28 @@
 package com.praktikum.main;
 
-import com.praktikum.users.Admin;
-import com.praktikum.users.Mahasiswa;
-import com.praktikum.users.User;
+import com.praktikum.data.Item;
+import com.praktikum.users.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginSystem {
+    public static ArrayList<User> userlist = new ArrayList<>();
+    public static ArrayList<Item> reportedItems = new ArrayList<>();
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        User user1 = new Admin("Faul", "138", "admin138", "pw138");
-        User user2 = new Mahasiswa("faul", "138");
+        userlist.add(new Admin("X", "138", "admin", "pw138"));
+//        userlist.add(new Mahasiswa("Faul", "138"));
+//        User user1 = new Admin("Faul", "138", "admin138", "pw138");
+//        User user2 = new Mahasiswa("faul", "138");
 
         while (true) {
-            System.out.println("----------erere----------");
-            System.out.println("Pilih Role Anda: ");
-            System.out.println("1. Admin (OP)");
-            System.out.println("2. Mahasiswa (bot)");
+            System.out.println("--------------------");
+            System.out.println("Pilih Jenis Login: ");
+            System.out.println("1. Admin");
+            System.out.println("2. Mahasiswa");
             System.out.println("3. Keluar");
             System.out.print("Masukkan Pilihan Anda: ");
             int pilihan = scan.nextInt();
@@ -29,11 +34,20 @@ public class LoginSystem {
                 System.out.print("Masukkan Password: ");
                 String password = scan.nextLine();
 
-                if (user1.login(username, password)) {
-                    user1.displayInfo();
-                    user1.dispLayAppMenu();
-                } else {
-                    System.out.println("Login com.praktikum.users.Admin Gagal Mas!! Kayaknya Username atau Password salah deh. ");
+                boolean loginBerhasil = false;
+
+                for (User user : userlist) {
+                    if (user instanceof Admin) {
+                        if (user.login(username, password)) {
+                            user.displayInfo();
+                            user.displayAppMenu();
+                            loginBerhasil = true;
+                            break;
+                        }
+                    }
+                }
+                if (!loginBerhasil) {
+                    System.out.println("Login Admin Gagal!! Username atau Password salah.");
                 }
 
             } else if (pilihan == 2) {
@@ -42,11 +56,20 @@ public class LoginSystem {
                 System.out.print("Masukkan Password: ");
                 String nim = scan.nextLine();
 
-                if (user2.login(nama, nim)) {
-                    user2.displayInfo();
-                    user2.dispLayAppMenu();
-                } else {
-                    System.out.println("Login com.praktikum.users.Mahasiswa Gagal!! Nama atau Nim salah. ");
+                boolean loginBerhasil = false;
+
+                for (User user : userlist){
+                    if (user instanceof Mahasiswa){
+                        if (user.login(nama, nim)) {
+                            user.displayInfo();
+                            user.displayAppMenu();
+                            loginBerhasil = true;
+                            break;
+                        }
+                    }
+                }
+                if (!loginBerhasil){
+                    System.out.println("Login Mahasiswa Gagal!! Nama atau Nim salah. ");
                 }
 
             } else if (pilihan == 3) {
@@ -55,7 +78,6 @@ public class LoginSystem {
             } else {
                 System.out.println("Inputan tidak valid! Pilih antara (1//3)");
             }
-
         }
     }
 }

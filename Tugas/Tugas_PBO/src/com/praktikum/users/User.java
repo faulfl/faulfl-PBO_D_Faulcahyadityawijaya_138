@@ -25,15 +25,12 @@ public abstract class User {
         return nim;
     }
 
-    public boolean login(String inputNama, String inputNim){
-        return this.nama.equals(inputNama) && this.nim.equals(inputNim);
-    }
+    public abstract boolean login(String inputNama, String inputNim);
 
     public void displayInfo(){
         System.out.println("Nama : " + nama);
         System.out.println("Nim  : " + nim);
     }
 
-    public abstract void dispLayAppMenu();
-
+    public abstract void displayAppMenu();
 }
